@@ -1,0 +1,16 @@
+经过几天的奋斗终于找到原因了:是package control 的setting defaut 里的channel_v3.json连不上网！！！
+1.官网下载sublime text3，安装解压
+2.打开安装解压后的文件夹，建一个Data放以后供拓展的包
+3.运行sublime，然后在Data目录下生成的installed package下放入Package Control.sublime-package（这个在官网有下载，但是国内网访问不了，要翻墙）
+4.访问"https://packagecontrol.io/channel_v3.json"网址，下载下来，先改成.txt格式，将schema_version改成2.0，而不是2.0.0！！保存，将文件名字改成channel_v3.json，放在D盘
+5.在package control下的setting user里添加信息：
+"channels":
+	[
+		"D:\\测试用具安装包\\Sublime.Text.3.1.1.3176.x64.NoCmd\\Sublime Text\\channel_v3.json"
+	],
+6.保存退出，重启下sublime就可以下载插件了
+ctrl+shift+p 输入install再输入安装的插件名
+
+遇到输入中文是对不齐的要加入："font_options": ["gdi"],
+
+注：这篇文章很有参考意义，我就是从这里找到的如何：https://blog.csdn.net/qq_38121031/article/details/80250490
